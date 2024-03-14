@@ -1,7 +1,7 @@
 {
-  "name": "puppeteer-cluster",
-  "version": "0.23.0",
-  "description": "Cluster management for puppeteer",
+  "name": "puppeteer-cluster-fork",
+  "version": "0.23.1",
+  "description": "Cluster management for puppeteer forked with fixes for newer versions",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
