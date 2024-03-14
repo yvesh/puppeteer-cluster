@@ -11,10 +11,6 @@
     "dev": "tsc --watch"
   },
   "author": "Thomas Dondorf",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/thomasdondorf/puppeteer-cluster.git"
-  },
   "homepage": "https://github.com/thomasdondorf/puppeteer-cluster",
   "keywords": [
     "puppeteer",

@@ -8,8 +8,8 @@ const debug = debugGenerator('BrowserConcurrency');
 const BROWSER_TIMEOUT = 5000;
 
 export default class Browser extends ConcurrencyImplementation {
-    public async init() {}
-    public async close() {}
+    public async init() { }
+    public async close() { }
 
     public async workerInstance(perBrowserOptions: puppeteer.LaunchOptions | undefined):
         Promise<WorkerInstance> {
@@ -22,6 +22,7 @@ export default class Browser extends ConcurrencyImplementation {
         return {
             jobInstance: async () => {
                 await timeoutExecute(BROWSER_TIMEOUT, (async () => {
+                    // @ts-ignore - puppeteer typings are old
                     context = await chrome.createBrowserContext();
                     page = await context.newPage();
                 })());
@@ -46,7 +47,7 @@ export default class Browser extends ConcurrencyImplementation {
                 try {
                     // will probably fail, but just in case the repair was not necessary
                     await chrome.close();
-                } catch (e) {}
+                } catch (e) { }
 
                 // just relaunch as there is only one page per browser
                 chrome = await this.puppeteer.launch(options);
